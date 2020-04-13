@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -exo pipefail
+
+docker build -t htmlmin:latest .
+docker run --rm -v "$PWD:/app" htmlmin:latest htmlmin index.html index-min.html
